@@ -1,6 +1,6 @@
 import React from "react";
 
-const ProductCard = () => {
+const ProductCard = ({product}) => {
   return (
     <div className="w-full sm:w-1/2 md:w-1/3 lg:w-2/6 p-4">
       <div className="w-sm rounded overflow-hidden shadow-lg">
