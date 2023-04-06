@@ -1,12 +1,17 @@
 import React from "react";
+import { Link } from "react-router-dom";
+import CardLoading from "./CardLoading";
 
 const ProductCard = ({product}) => {
+  if(!product){
+    return <CardLoading/>
+  }
   return (
-    <div className="w-full sm:w-1/2 md:w-1/3 lg:w-2/6 p-4">
+    <Link to={"/product-details/"+product.id} className="w-full sm:w-1/2 md:w-1/3 lg:w-3/12 p-4">
       <div className="w-sm rounded overflow-hidden shadow-lg">
         <img
-          className="w-full"
-          src="https://source.unsplash.com/random/400x200"
+          className="w-full h-64"
+          src={product.image}
           alt="Product"
         />
         <div className="px-6 py-4">
@@ -22,7 +27,7 @@ const ProductCard = ({product}) => {
           </button>
         </div>
       </div>
-    </div>
+    </Link>
   );
 };
 

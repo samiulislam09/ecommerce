@@ -10,7 +10,7 @@ function Products() {
     return <Loading />
   }
   return (
-      <div className="flex flex-wrap lg:w-11/12 items-center justify-center mx-auto">
+      <div className="flex flex-wrap lg:w-11/12 mx-auto">
         {products.map((product)=>{
           return (
             <ProductCard id={product.id} product={product}/>
