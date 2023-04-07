@@ -1,14 +1,13 @@
 const cart_reducer = (state, action) => {
   switch (action.type) {
     case "addToCart":
-      const { id, color, amount, product } = action.payload;
-      const newValue = state.cart.find((item) => item.id === id + color);
+      const { id, amount, product } = action.payload;
+      const newValue = state.cart.find((item) => item.id === id);
       if (newValue) {
       } else {
         const item = {
-          id: id + color,
+          id: id ,
           name: product.name,
-          color,
           amount,
           image: product.images[0].url,
           price: product.price,

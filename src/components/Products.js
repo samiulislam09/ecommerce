@@ -4,7 +4,7 @@ import { useProductsContext } from '../context/productscontext'
 import Loading from '../pages/Loading';
 
 function Products() {
-  const {products, productsLoading, productsError}  = useProductsContext();
+  const {products, productsLoading}  = useProductsContext();
   console.log(products)
   if(productsLoading){
     return <Loading />

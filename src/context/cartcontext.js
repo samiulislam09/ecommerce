@@ -1,5 +1,5 @@
 import React, { useEffect, useContext, useReducer } from "react";
-import reducer from "../reducers/cart_reducer";
+import reducer from "../reducer/cartReducer";
 
 const initialState = {
   cart: JSON.parse(localStorage.getItem("cart")) || [],
@@ -13,8 +13,8 @@ const CartContext = React.createContext();
 export const CartProvider = ({ children }) => {
   const [state, dispatch] = useReducer(reducer, initialState);
 
-  const addToCart = (id, color, amount, product) => {
-    dispatch({ type: "addToCart", payload: { id, color, amount, product } });
+  const addToCart = (id, amount, product) => {
+    dispatch({ type: "addToCart", payload: { id, amount, product } });
   };
   const removeItem = (id) => {
     dispatch({ type: "removeCartItem", payload: { id } });
