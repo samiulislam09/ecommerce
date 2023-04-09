@@ -1,10 +1,8 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import CardLoading from "./CardLoading";
-import { useCartContext } from "../context/cartcontext";
 
 const ProductCard = ({product}) => {
-  const {addToCart} =  useCartContext();
   if(!product){
     return <CardLoading/>
   }
@@ -21,11 +19,11 @@ const ProductCard = ({product}) => {
 
         </Link>
         <div className="px-6 py-4">
-          <div className="font-bold text-xl mb-2">Product Title</div>
+          <div className="font-bold text-xl mb-2">{product.name}</div>
           <p className="text-gray-700 text-base">
-            A brief description of the product goes here.
+            {product.description}
           </p>
-          <p className="text-gray-700 text-base font-bold">$99.99</p>
+          <p className="text-gray-700 text-base font-bold">${product.price}</p>
         </div>
       </div>
     </div>
